@@ -1,3 +1,4 @@
+@import '../../node_modules/reset-css/sass/reset';
 @import 'blocks/vars';
 @import './vendor/mixins';
 @import 'blocks/fonts';
@@ -12,6 +13,7 @@
 @import 'blocks/sessonBtns';
 @import 'blocks/socialLinks';
 @import 'blocks/formatBtn';
+@import 'blocks/table';
 
 @import 'blocks/footer';
 

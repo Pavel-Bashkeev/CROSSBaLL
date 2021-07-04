@@ -1,4 +1,7 @@
 .content {
+	margin-bottom: 100px;
+	position: relative;
+
 	&__top {
 		display: grid;
 		grid-template-columns: auto 1fr 120px;
@@ -7,5 +10,6 @@
 			#2C2C2C url(../images/dest/pattern.webp) 98% 15px no-repeat;
 		border-radius: 10px;
 		padding: 20px 75px 24px 20px;
+		margin-bottom: 82px;
 	}
 }
