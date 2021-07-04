@@ -109,8 +109,8 @@
 	<div class="sidebar-menu">
 		<ul class="sidebar-menu__list">
 			<li class='select-menu sidebar-menu__item'>
-				<a href='#' class='sidebar-menu__link menu-active select-menu__link'
-					style='background-image:url(./images/dest/sprite.svg#chart)' aria-expanded="false">Статистика</a>
+				<p class='sidebar-menu__link menu-active select-menu__link'
+					style='background-image:url(./images/dest/sprite.svg#chart)' aria-expanded="false">Статистика</p>
 				<div class="menu-second" aria-hidden="true">
 					<a href='#' class='menu-second__link menu-second__link--active'>Футбол</a>
 					<a href='#' class='menu-second__link'>Баскетбол</a>
@@ -250,12 +250,13 @@
 		<table class='table'>
 			<thead class='table-head'>
 				<tr class='table-head__row'>
-					<th class='table-head__item'>Сезон</th>
-					<th class='table-head__item table-head__sort'>Кол-во игр</th>
-					<th class='table-head__item table-head__sort'>Гол</th>
-					<th class='table-head__item table-head__sort'>Пас</th>
-					<th class='table-head__item table-head__sort'>Гол + пас</th>
-					<th class='table-head__item table-head__sort'>Рейтинг</th>
+					<th class='table-head__item' data-column='nameSesson'>Сезон</th>
+					<th class='table-head__item table-head__sort' data-order='descr' data-column='countGame'>Кол-во игр
+					</th>
+					<th class='table-head__item table-head__sort' data-order='descr' data-column='gol'>Гол</th>
+					<th class='table-head__item table-head__sort' data-order='descr' data-column='pas'>Пас</th>
+					<th class='table-head__item table-head__sort' data-order='descr' data-column='golPas'>Гол + пас</th>
+					<th class='table-head__item table-head__sort' data-order='descr' data-column='rating'>Рейтинг</th>
 				</tr>
 			</thead>
 			<tbody class='table-body'>

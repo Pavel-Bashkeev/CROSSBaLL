@@ -35,6 +35,7 @@
 
 	&__item {
 		padding: 5px;
+		z-index: 0;
 	}
 
 
@@ -43,4 +44,5 @@
 
 .select-body__opened {
 	opacity: 1;
+	z-index: 1;
 }
