@@ -1,32 +1,36 @@
-let myArrayTable = [
-	{ 'nameSesson': 'Сезон 2021/2020', 'countGame': '5', 'gol': '9', 'pas': '2', 'golPas': '1', 'rating': '90' },
-	{ 'nameSesson': 'Сезон 2020/2019', 'countGame': '4', 'gol': '8', 'pas': '5', 'golPas': '2', 'rating': '97' },
-	{ 'nameSesson': 'Сезон 2019/2018', 'countGame': '3', 'gol': '7', 'pas': '3', 'golPas': '3', 'rating': '30' },
-	{ 'nameSesson': 'Сезон 2018/2017', 'countGame': '2', 'gol': '6', 'pas': '5', 'golPas': '4', 'rating': '50' },
-	{ 'nameSesson': 'Сезон 2017/2016', 'countGame': '5', 'gol': '5', 'pas': '4', 'golPas': '5', 'rating': '10' }
-]
-
-buildTabel(myArrayTable);
-
+// let myArrayTable = [
+// 	{ 'nameSesson': 'Сезон 2021/2020', 'countGame': '5', 'gol': '9', 'pas': '2', 'golPas': '1', 'rating': '90' },
+// 	{ 'nameSesson': 'Сезон 2020/2019', 'countGame': '4', 'gol': '8', 'pas': '5', 'golPas': '2', 'rating': '97' },
+// 	{ 'nameSesson': 'Сезон 2019/2018', 'countGame': '3', 'gol': '7', 'pas': '3', 'golPas': '3', 'rating': '30' },
+// 	{ 'nameSesson': 'Сезон 2018/2017', 'countGame': '2', 'gol': '6', 'pas': '5', 'golPas': '4', 'rating': '50' },
+// 	{ 'nameSesson': 'Сезон 2017/2016', 'countGame': '5', 'gol': '5', 'pas': '4', 'golPas': '5', 'rating': '10' }
+// ]
 const nameTHead = document.querySelectorAll('.table-head__sort');
 const tableHead = document.querySelector('.table-head');
 
-nameTHead.forEach(item => {
-	item.addEventListener('click', function () {
-		let columnName = this.getAttribute('data-column');
-		let orderColumn = this.getAttribute('data-order');
-		if (orderColumn == 'descr') {
-			item.setAttribute('data-order', 'asc');
-			myArrayTable = myArrayTable.sort((a, b) => a[columnName] > b[columnName] ? 1 : -1);
-		} else {
-			item.setAttribute('data-order', 'descr');
-			myArrayTable = myArrayTable.sort((a, b) => a[columnName] < b[columnName] ? 1 : -1);
-		}
-		buildTabel(myArrayTable);
-	})
-})
-
-function buildTabel(data) {
+let myArrayTable = fetch('../data/dataTable.json')
+	.then(resp => resp.json())
+	.then(data => {
+		let dataResponse = data;
+		getTableValue(dataResponse);
+		nameTHead.forEach(item => {
+			item.addEventListener('click', function () {
+				let columnName = this.getAttribute('data-column');
+				let orderColumn = this.getAttribute('data-order');
+				console.log(dataResponse)
+				if (orderColumn == 'descr') {
+					item.setAttribute('data-order', 'asc');
+					dataResponse = dataResponse.sort((a, b) => a[columnName] > b[columnName] ? 1 : -1);
+					getTableValue(dataResponse);
+				} else {
+					item.setAttribute('data-order', 'descr');
+					dataResponse = dataResponse.sort((a, b) => a[columnName] < b[columnName] ? 1 : -1);
+					getTableValue(dataResponse);
+				}
+			})
+		});
+	});
+function getTableValue(data) {
 	let tbody = document.querySelector('.table-body');
 	tbody.innerHTML = '';
 	for (let i = 0; i < data.length; i++) {

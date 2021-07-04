@@ -36,6 +36,7 @@
 	&__item {
 		padding: 5px;
 		z-index: 0;
+		cursor: auto;
 	}
 
 
@@ -45,4 +46,8 @@
 .select-body__opened {
 	opacity: 1;
 	z-index: 1;
+
+	.format-btn__item {
+		cursor: pointer;
+	}
 }
