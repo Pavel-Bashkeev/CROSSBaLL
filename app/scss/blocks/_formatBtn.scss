@@ -1,0 +1,42 @@
+.content-format {
+	background-color: var(--white);
+	border-radius: 5px;
+	padding: 10px;
+	max-width: 170px;
+	margin: 20px 0;
+	cursor: pointer;
+}
+
+.format-btn {
+
+	&__current {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+
+
+		&-arrow {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	&__items {
+		transition: all .2s ease-in-out;
+		max-height: 0;
+		opacity: 0;
+		will-change: max-height;
+	}
+
+	&__item {
+		padding: 5px;
+	}
+
+
+
+}
+
+.select-body__opened {
+	opacity: 1;
+}
