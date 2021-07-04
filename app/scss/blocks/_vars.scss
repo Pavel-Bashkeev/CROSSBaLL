@@ -1,0 +1,28 @@
+:root {
+	--font-family-semibold: 'Proxima Nova SemiBold';
+	--font-family-regular: 'Proxima Nova Regular';
+
+	--font-defult: 400 16px / 22px var(--font-family-regular);
+	--font-big: 400 30px / 33px var(--font-family-regular);
+	--font-small: 400 12px / 14px var(--font-family-regular);
+	--font-middle: 400 20px / 22px var(--font-family-regular);
+	--font-semibold-default: 600 16px / 18px var(--font-family-semibold);
+
+
+
+	--default: #222222;
+	--white: #ffffff;
+	--black: #000000;
+	--gray: #909090;
+	--gray-light: #ACAFF3;
+	--bg: #E5E5E5;
+	--primery: #5A60E7;
+	--green-light: #86E3CE;
+	--red: #FF795B;
+}
+
+%background-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}

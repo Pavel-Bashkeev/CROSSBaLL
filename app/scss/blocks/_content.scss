@@ -1,0 +1,11 @@
+.content {
+	&__top {
+		display: grid;
+		grid-template-columns: auto 1fr 120px;
+		justify-content: start;
+		background: linear-gradient(238.37deg, rgba(90, 96, 231, 0.35) 6.34%, rgba(30, 30, 40, 0) 103.77%),
+			#2C2C2C url(../images/dest/pattern.webp) 98% 15px no-repeat;
+		border-radius: 10px;
+		padding: 20px 75px 24px 20px;
+	}
+}
