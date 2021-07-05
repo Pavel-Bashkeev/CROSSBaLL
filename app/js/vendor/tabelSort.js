@@ -8,7 +8,7 @@
 const nameTHead = document.querySelectorAll('.table-head__sort');
 const tableHead = document.querySelector('.table-head');
 
-let myArrayTable = fetch('../data/dataTable.json')
+let myArrayTable = fetch('https://pavel-bashkeev.github.io/CROSSBaLL/data/dataTable.json')
 	.then(resp => resp.json())
 	.then(data => {
 		let dataResponse = data;

@@ -1,4 +1,4 @@
-const getCartSesson = fetch('../data/dataSesson.json')
+const getCartSesson = fetch('https://pavel-bashkeev.github.io/CROSSBaLL/data/dataSesson.json')
 	.then(respons => respons.json())
 	.then(data => {
 		cardSesson(data);
