@@ -15,9 +15,12 @@ let myArrayTable = fetch('../data/dataTable.json')
 		getTableValue(dataResponse);
 		nameTHead.forEach(item => {
 			item.addEventListener('click', function () {
+
+				activeTHead(nameTHead, item, 'table-head__sort-down');
+
 				let columnName = this.getAttribute('data-column');
 				let orderColumn = this.getAttribute('data-order');
-				console.log(dataResponse)
+
 				if (orderColumn == 'descr') {
 					item.setAttribute('data-order', 'asc');
 					dataResponse = dataResponse.sort((a, b) => a[columnName] > b[columnName] ? 1 : -1);
@@ -26,7 +29,11 @@ let myArrayTable = fetch('../data/dataTable.json')
 					item.setAttribute('data-order', 'descr');
 					dataResponse = dataResponse.sort((a, b) => a[columnName] < b[columnName] ? 1 : -1);
 					getTableValue(dataResponse);
+					item.classList.remove('table-head__sort-down');
 				}
+
+
+
 			})
 		});
 	});
@@ -45,5 +52,14 @@ function getTableValue(data) {
 		</tr>
 		`;
 		tbody.innerHTML += row;
+	}
+}
+function activeTHead(items, item, className) {
+	for (let i = 0; i < items.length; i++) {
+		if (items[i].classList.contains(className)) {
+			items[i].classList.remove(className);
+		} else {
+			item.classList.add(className);
+		}
 	}
 }
